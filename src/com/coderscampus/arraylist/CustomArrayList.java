@@ -3,7 +3,7 @@ package com.coderscampus.arraylist;
 public class CustomArrayList<T> implements CustomList<T> {
 
 	private Object[] items;
-	private int index;
+	private int index; // Count the number of item to add
 
 	public CustomArrayList() {
 		this.items = new Object[10];
@@ -12,14 +12,14 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 	@Override
 	public boolean add(T item) {
+		// If the current index is greater or equal the array length,
+		// then we resize the array
 		if (this.index >= this.getSize()) this.resizeArray();
-	
-		if (this.items[index] == null) {
-			this.items[index] = item;
-		}
-		
+		// the item's value at position index is null, then assign the item 
+		if (this.items[index] == null) this.items[index] = item;
+		// Increment the index value for the next item
 		this.index++;
-
+		// Then return true
 		return true;
 	}
 	
