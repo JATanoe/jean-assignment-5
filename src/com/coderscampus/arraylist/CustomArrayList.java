@@ -2,13 +2,8 @@ package com.coderscampus.arraylist;
 
 public class CustomArrayList<T> implements CustomList<T> {
 
-	private Object[] items;
-	private int index; // Count the number of item to add
-
-	public CustomArrayList() {
-		this.items = new Object[10];
-		this.index = 0;
-	}
+	private Object[] items = new Object[10];
+	private int index = 0; // Count the number of item to add
 
 	@Override
 	public boolean add(T item) {
@@ -39,9 +34,12 @@ public class CustomArrayList<T> implements CustomList<T> {
 	}
 
 	private void resizeArray() {
-		int newSize = this.getSize() * 2;
-		Object[] newArray = new Object[newSize];		
+		// Initialize and assign a new array of Objects with double 
+		// the size of the current array
+		Object[] newArray = new Object[this.getSize() * 2];		
+		// Copy the current array into the new one
 		System.arraycopy(this.items, 0, newArray, 0, this.getSize());
+		// Assign the new array the current one
 		this.items = newArray;
 	}
 

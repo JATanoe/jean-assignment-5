@@ -10,7 +10,7 @@ public class Main {
 		CustomList<String> myCustomList = new CustomArrayList<>();
 		
 		int index = 0;
-		while (index < 15) {
+		while (index < 23) {
 			myCustomList.add("element " + index);	
 			index++;
 		}
