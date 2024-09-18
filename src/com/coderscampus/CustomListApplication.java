@@ -3,7 +3,7 @@ package com.coderscampus;
 import com.coderscampus.arraylist.CustomArrayList;
 import com.coderscampus.arraylist.CustomList;
 
-public class Main {
+public class CustomListApplication  {
 
 	public static void main(String[] args) {
 
@@ -18,6 +18,9 @@ public class Main {
 		for (int i = 0; i < myCustomList.getSize(); i++) {
 			System.out.println(myCustomList.get(i));
 		}
+
+		System.out.println("Array size: " + myCustomList.getSize());
+
 
 	}
 }

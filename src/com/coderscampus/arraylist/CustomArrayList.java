@@ -9,29 +9,28 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 	@Override
 	public boolean add(T item) {
-		if (this.size >= this.getSize()) this.resizeArray();
-		if (this.items[size] == null) this.items[size] = item;
-		this.size++;
+		if (size >= getSize()) resizeArray();
+		if (items[size] == null) items[size] = item;
+		size++;
 		return true;
 	}
 	
 	@Override
 	public int getSize() {
-		return this.size;
+		return size;
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public T get(int index) {
-		if (index >= this.getSize() || index < 0) {
-			throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + this.getSize());
+		if (index >= getSize() || index < 0) {
+			throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + getSize());
 		}
 
-		return (T) this.items[index];
+		return (T) items[index];
 	}
 
 	private void resizeArray() {		
-		this.items = Arrays.copyOf(this.items, this.items.length * 2);
+		items = Arrays.copyOf(items, items.length * 2);
 	}
 
 }
